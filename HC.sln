@@ -2,15 +2,25 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HC", "HC\HC.csproj", "{FD3C4B8C-3186-4FDC-821F-9EBCC8D7A9C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HC.SDK", "HC.SDK\HC.SDK.csproj", "{BECDAAB4-972B-4202-9E2E-85DE1335AD1C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{765C356F-5867-4726-A62F-884D4D0543B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{765C356F-5867-4726-A62F-884D4D0543B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765C356F-5867-4726-A62F-884D4D0543B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD3C4B8C-3186-4FDC-821F-9EBCC8D7A9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FD3C4B8C-3186-4FDC-821F-9EBCC8D7A9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD3C4B8C-3186-4FDC-821F-9EBCC8D7A9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD3C4B8C-3186-4FDC-821F-9EBCC8D7A9C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECDAAB4-972B-4202-9E2E-85DE1335AD1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECDAAB4-972B-4202-9E2E-85DE1335AD1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECDAAB4-972B-4202-9E2E-85DE1335AD1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECDAAB4-972B-4202-9E2E-85DE1335AD1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
