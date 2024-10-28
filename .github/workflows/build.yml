@@ -21,4 +21,4 @@ jobs:
         
       
       
-      - run: ./build.sh --Configuration Release Print 
+      - run: ./build.sh Print 
