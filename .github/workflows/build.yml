@@ -1,0 +1,25 @@
+name: dev-builds
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+
+  windows-builds:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.x
+
+      - run: chmod +x build.sh
+      
+      - run: ./build.sh Print
