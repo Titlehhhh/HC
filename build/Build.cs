@@ -70,9 +70,7 @@ class Build : NukeBuild
             Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
             Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
             
-            Log.Information("NerdbankVersioning = {Value}", NerdbankVersioning.SimpleVersion);
             
-            Log.Information("OctoVersionInfo = {Value}", OctoVersionInfo.MajorMinorPatch);
             
             Log.Information("MinVer = {Value}", MinVer.Version);
         });
