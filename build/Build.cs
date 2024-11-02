@@ -8,6 +8,9 @@ using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.GitVersion;
+using Nuke.Common.Tools.MinVer;
+using Nuke.Common.Tools.NerdbankGitVersioning;
+using Nuke.Common.Tools.OctoVersion;
 using Nuke.Common.Utilities.Collections;
 using Serilog;
 using static Nuke.Common.EnvironmentInfo;
@@ -25,6 +28,13 @@ class Build : NukeBuild
 
     [GitVersion(Framework = "net8.0")]
     readonly GitVersion GitVersion;
+    [MinVer]
+    readonly MinVer MinVer;
+    [OctoVersion]
+    readonly OctoVersionInfo OctoVersionInfo;
+    [NerdbankGitVersioning]
+    readonly NerdbankGitVersioning NerdbankVersioning;
+    
     
     [NuGetPackage("Microsoft.DotNet.ApiCompat.Tool", "Microsoft.DotNet.ApiCompat.Tool.dll", Framework = "net8.0")]
     Tool ApiCompatTool;
@@ -62,6 +72,12 @@ class Build : NukeBuild
         {
             Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
             Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
+            
+            Log.Information("NerdbankVersioning = {Value}", NerdbankVersioning.SimpleVersion);
+            
+            Log.Information("OctoVersionInfo = {Value}", OctoVersionInfo.MajorMinorPatch);
+            
+            Log.Information("MinVer = {Value}", MinVer.Version);
         });
 
 }
