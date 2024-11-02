@@ -61,6 +61,7 @@ class Build : NukeBuild
         .Executes(() =>
         {
             Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
+            Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
         });
 
 }
