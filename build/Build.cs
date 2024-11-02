@@ -28,11 +28,11 @@ class Build : NukeBuild
 
     [GitVersion(Framework = "net8.0")]
     readonly GitVersion GitVersion;
-    [MinVer]
+    [MinVer(Framework = "net8.0")]
     readonly MinVer MinVer;
-    [OctoVersion]
+    [OctoVersion(Framework = "net8.0")]
     readonly OctoVersionInfo OctoVersionInfo;
-    [NerdbankGitVersioning]
+    [NerdbankGitVersioning()]
     readonly NerdbankGitVersioning NerdbankVersioning;
     
     
