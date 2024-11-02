@@ -26,10 +26,10 @@ class Build : NukeBuild
     [GitVersion(Framework = "net8.0")]
     readonly GitVersion GitVersion;
     
-    [PackageExecutable("Microsoft.DotNet.ApiCompat.Tool", "Microsoft.DotNet.ApiCompat.Tool.dll", Framework = "net8.0")]
+    [NuGetPackage("Microsoft.DotNet.ApiCompat.Tool", "Microsoft.DotNet.ApiCompat.Tool.dll", Framework = "net8.0")]
     Tool ApiCompatTool;
     
-    [PackageExecutable("Microsoft.DotNet.GenAPI.Tool", "Microsoft.DotNet.GenAPI.Tool.dll", Framework = "net8.0")]
+    [NuGetPackage("Microsoft.DotNet.GenAPI.Tool", "Microsoft.DotNet.GenAPI.Tool.dll", Framework = "net8.0")]
     Tool ApiGenTool;
     
     public static int Main () => Execute<Build>(x => x.Compile);
