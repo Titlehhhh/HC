@@ -1,0 +1,5 @@
+#nullable enable
+HC.SDK.MinecraftClient
+HC.SDK.MinecraftClient.asdasd(int a) -> System.Threading.Tasks.Task!
+HC.SDK.MinecraftClient.GG(int a) -> System.Threading.Tasks.Task!
+HC.SDK.MinecraftClient.MinecraftClient() -> void
