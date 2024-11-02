@@ -30,10 +30,7 @@ class Build : NukeBuild
     readonly GitVersion GitVersion;
     [MinVer(Framework = "net8.0")]
     readonly MinVer MinVer;
-    [OctoVersion(Framework = "net8.0")]
-    readonly OctoVersionInfo OctoVersionInfo;
-    [NerdbankGitVersioning()]
-    readonly NerdbankGitVersioning NerdbankVersioning;
+    
     
     
     [NuGetPackage("Microsoft.DotNet.ApiCompat.Tool", "Microsoft.DotNet.ApiCompat.Tool.dll", Framework = "net8.0")]
