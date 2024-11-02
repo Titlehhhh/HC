@@ -4,7 +4,7 @@ public class MinecraftClient
 {
     public void gaq()
     {
-        Console.WriteLine("asdasd1");
+        Console.WriteLine("asdasd11");
     }
     public Task GG(int a)
     {
