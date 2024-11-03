@@ -12,4 +12,7 @@
   <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <SourceRoot Include="C:\Users\Title\.nuget\packages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)nerdbank.gitversioning\3.6.146\build\Nerdbank.GitVersioning.props" Condition="Exists('$(NuGetPackageRoot)nerdbank.gitversioning\3.6.146\build\Nerdbank.GitVersioning.props')" />
+  </ImportGroup>
 </Project>
