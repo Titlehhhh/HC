@@ -26,10 +26,13 @@ class Build : NukeBuild
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
 
-    [GitVersion(Framework = "net8.0")]
-    readonly GitVersion GitVersion;
-    [MinVer(Framework = "net8.0")]
-    readonly MinVer MinVer;
+   // [GitVersion(Framework = "net8.0")]
+    //readonly GitVersion GitVersion;
+    //[MinVer(Framework = "net8.0")]
+   // readonly MinVer MinVer;
+
+    [NerdbankGitVersioning]
+    readonly NerdbankGitVersioning NBGV;
     
     
     
@@ -67,12 +70,14 @@ class Build : NukeBuild
         .DependsOn(Restore)
         .Executes(() =>
         {
-            Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
-            Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
+           // Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
+          //  Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
             
             
             
-            Log.Information("MinVer = {Value}", MinVer.Version);
+           // Log.Information("MinVer = {Value}", MinVer.Version);
+            
+            Log.Information("NerdbankVersioning = {Value}", NBGV.SimpleVersion);
         });
 
 }
