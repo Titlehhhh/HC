@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <PackageDownload Include="GitVersion.Tool" Version="[6.0.4]" />
+    <PackageDownload Include="minver-cli" Version="[6.0.0]" />
     <PackageDownload Include="nbgv" Version="[3.6.146]" />
   </ItemGroup>
 

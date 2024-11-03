@@ -27,8 +27,8 @@ class Build : NukeBuild
     ///   - Microsoft VSCode           https://nuke.build/vscode
     [GitVersion(Framework = "net8.0")]
     readonly GitVersion GitVersion;
-    //[MinVer(Framework = "net8.0")]
-    // readonly MinVer MinVer;
+    [MinVer(Framework = "net8.0")]
+     readonly MinVer MinVer;
 
     [NerdbankGitVersioning] readonly NerdbankGitVersioning NBGV;
 
@@ -73,7 +73,7 @@ class Build : NukeBuild
             Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
 
 
-            // Log.Information("MinVer = {Value}", MinVer.Version);
+            Log.Information("MinVer = {Value}", MinVer.Version);
 
             Log.Information("NerdbankVersioning = {Value}", NBGV.SimpleVersion);
         });
