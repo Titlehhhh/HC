@@ -25,28 +25,27 @@ class Build : NukeBuild
     ///   - JetBrains Rider            https://nuke.build/rider
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
-
-   // [GitVersion(Framework = "net8.0")]
-    //readonly GitVersion GitVersion;
+    [GitVersion(Framework = "net8.0")]
+    readonly GitVersion GitVersion;
     //[MinVer(Framework = "net8.0")]
-   // readonly MinVer MinVer;
+    // readonly MinVer MinVer;
 
-    [NerdbankGitVersioning]
-    readonly NerdbankGitVersioning NBGV;
-    
-    
-    
+    [NerdbankGitVersioning] readonly NerdbankGitVersioning NBGV;
+
+
     [NuGetPackage("Microsoft.DotNet.ApiCompat.Tool", "Microsoft.DotNet.ApiCompat.Tool.dll", Framework = "net8.0")]
     Tool ApiCompatTool;
-    
+
     [NuGetPackage("Microsoft.DotNet.GenAPI.Tool", "Microsoft.DotNet.GenAPI.Tool.dll", Framework = "net8.0")]
     Tool ApiGenTool;
-    
-    public static int Main () => Execute<Build>(x => x.Compile);
+
+    public static int Main() => Execute<Build>(x => x.Compile);
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
     readonly Configuration Configuration = IsLocalBuild ? Configuration.Debug : Configuration.Release;
+
     [Solution(GenerateProjects = true)] readonly Solution Solution;
+
     Target Clean => _ => _
         .Before(Restore)
         .Executes(() =>
@@ -65,19 +64,17 @@ class Build : NukeBuild
         .Executes(() =>
         {
         });
-    
+
     Target Print => _ => _
         .DependsOn(Restore)
         .Executes(() =>
         {
-           // Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
-          //  Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
-            
-            
-            
-           // Log.Information("MinVer = {Value}", MinVer.Version);
-            
+            Log.Information("GitVersion = {Value}", GitVersion.MajorMinorPatch);
+            Log.Information("GitVersion.FullSemVer = {Value}", GitVersion.FullSemVer);
+
+
+            // Log.Information("MinVer = {Value}", MinVer.Version);
+
             Log.Information("NerdbankVersioning = {Value}", NBGV.SimpleVersion);
         });
-
 }

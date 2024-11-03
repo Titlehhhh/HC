@@ -1,17 +1,5 @@
 mode: ContinuousDelivery
-branches: 
-  master:
-    tag: ''
-    increment: Patch
-    prevent-increment-of-merged-branch-version: true
-  develop:
-    tag: beta
-    increment: Minor
-    pre-release-weight: 1
-  release:
-    tag: rc
-    increment: Patch
-    pre-release-weight: 1
+
 ignore:
   sha: []
 merge-message-formats: {}
